@@ -23,6 +23,11 @@ Turns a folder of raw claim documents into an audit-ready decision packet: LLM e
 
 Screens accounts-payable invoices with a **3-way match** (invoice vs PO vs goods receipt) plus statistical fraud detectors: duplicates (exact & fuzzy), price outliers via vendor-history z-scores, bank-detail changes, and threshold gaming. Detector **precision/recall are measured on a labeled synthetic population and gated at 90% in CI** — detector quality as a regression-tested property.
 
+### [Voxa](https://github.com/TarunReddy8/voxa) — a fully local, low-latency voice AI agent
+[![CI](https://github.com/TarunReddy8/voxa/actions/workflows/ci.yml/badge.svg)](https://github.com/TarunReddy8/voxa/actions/workflows/ci.yml)
+
+Talk to your computer with **zero cloud dependencies**: energy-based VAD listening, faster-whisper STT, streaming Ollama reasoning with native tool calls, and a **sentence-streamed Piper TTS pipeline that starts speaking while the model is still generating**. Per-turn latency breakdown (stt · first token · first audio), AST-safe tool execution, and an agent loop fully testable in CI without hardware.
+
 > These projects work together: ClaimSight's CI uses evalsmith to gate its LLM-written narratives for faithfulness. Build → evaluate → ship.
 
 🚧 Next up: **TokenGate** — a self-hosted LLM gateway with semantic caching, complexity-based model routing, and per-team cost budgets.
