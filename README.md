@@ -18,7 +18,12 @@ Evaluation framework for LLM/RAG apps: faithfulness, relevance, and safety scori
 
 Turns a folder of raw claim documents into an audit-ready decision packet: LLM extraction with **verified citations** (hallucinated quotes get caught), a deterministic 9-rule policy engine, and a hash-chained tamper-evident audit trail. LLMs only where they add value — decisions stay reproducible code.
 
-> The two work together: ClaimSight's CI uses evalsmith to gate its LLM-written narratives for faithfulness. Build → evaluate → ship.
+### [APSentry](https://github.com/TarunReddy8/apsentry) — AP invoice screening with backtested detectors
+[![CI](https://github.com/TarunReddy8/apsentry/actions/workflows/ci.yml/badge.svg)](https://github.com/TarunReddy8/apsentry/actions/workflows/ci.yml)
+
+Screens accounts-payable invoices with a **3-way match** (invoice vs PO vs goods receipt) plus statistical fraud detectors: duplicates (exact & fuzzy), price outliers via vendor-history z-scores, bank-detail changes, and threshold gaming. Detector **precision/recall are measured on a labeled synthetic population and gated at 90% in CI** — detector quality as a regression-tested property.
+
+> These projects work together: ClaimSight's CI uses evalsmith to gate its LLM-written narratives for faithfulness. Build → evaluate → ship.
 
 🚧 Next up: **TokenGate** — a self-hosted LLM gateway with semantic caching, complexity-based model routing, and per-team cost budgets.
 
