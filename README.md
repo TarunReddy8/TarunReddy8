@@ -55,6 +55,7 @@ Talk to your computer with **zero cloud dependencies**: energy-based VAD listeni
 
 ## Reach me
 
+[![Portfolio](https://img.shields.io/badge/Portfolio-tarunreddy8.github.io-0A0A0C?logo=githubpages&logoColor=white)](https://tarunreddy8.github.io/)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/tarun-kumar-reddy-nallagari-27b408218/)
 [![Email](https://img.shields.io/badge/Email-EA4335?logo=gmail&logoColor=white)](mailto:ntarunreddywork@gmail.com)
 
