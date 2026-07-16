@@ -1,6 +1,6 @@
 # Hi, I'm Tarun Kumar Reddy Nallagari 👋
 
-**AI/ML Engineer** · Buffalo, NY · building production LLM, RAG, and MLOps systems where *"it works in the demo"* isn't good enough.
+**AI/ML Engineer** · building production LLM, RAG, and MLOps systems where *"it works in the demo"* isn't good enough.
 
 🌐 **Portfolio:** [tarunreddy8.github.io](https://tarunreddy8.github.io/) — 💼 [LinkedIn](https://www.linkedin.com/in/tarun-kumar-reddy-nallagari-27b408218/) — ✉️ [ntarunreddywork@gmail.com](mailto:ntarunreddywork@gmail.com)
 
@@ -8,15 +8,15 @@
 
 ## My story: from moving data to building the AI on top of it
 
-I started out in **Bengaluru, India**, as a **Data Engineer at Optum (UnitedHealth Group)** — the plumbing years, and I mean that as a compliment. I built PySpark pipelines that moved **2+ TB of medical and pharmacy claims every day** on Databricks, migrated 100+ legacy Hive workloads (60% faster, ~40% cheaper), stood up near-real-time Kafka ingestion, and enforced HIPAA-grade controls across Delta Lake and Snowflake. I learned what "production" actually costs: SLAs, data quality gates, the pager at 3 AM. Data engineering taught me that a system is only as good as its worst day.
+I started out as a **Data Engineer at Optum (UnitedHealth Group)** — the plumbing years, and I mean that as a compliment. I built PySpark pipelines that moved **2+ TB of medical and pharmacy claims every day** on Databricks, migrated 100+ legacy Hive workloads (60% faster, ~40% cheaper), stood up near-real-time Kafka ingestion, and enforced HIPAA-grade controls across Delta Lake and Snowflake. I learned what "production" actually costs: SLAs, data quality gates, the pager at 3 AM. Data engineering taught me that a system is only as good as its worst day.
 
-Then generative AI changed what was possible on top of that data — so I moved, in two senses. I came to the **United States** for an **MS in Data Science at the University at Buffalo (SUNY)**, and I moved up the stack from *moving* data to *reasoning* over it.
+Then generative AI changed what was possible on top of that data — so I moved up the stack. I earned an **MS in Data Science** and went from *moving* data to *reasoning* over it.
 
-Today I'm an **AI/ML Engineer at Ally Financial in New York** 🇺🇸, where I built a **RAG knowledge assistant for 2,000+ customer-care agents** on Azure OpenAI — with the guardrails, evaluation harness, and monitoring that got it past a **bank's model risk office**. It cut agent handle time 14%, LLM spend ~35%, and holds p95 under 800 ms at 50K requests a day.
+Today I'm an **AI/ML Engineer at Ally Financial**, where I built a **RAG knowledge assistant for 2,000+ customer-care agents** on Azure OpenAI — with the guardrails, evaluation harness, and monitoring that got it past a **bank's model risk office**. It cut agent handle time 14%, LLM spend ~35%, and holds p95 under 800 ms at 50K requests a day.
 
 The through-line from Optum to Ally is the same instinct: **the unglamorous parts are what make AI shippable** — evaluation, grounding, cost control, audit trails. My data-engineering years are why my AI systems have tests, gates, and monitoring instead of just a nice demo.
 
-> **Bengaluru → Buffalo. Data Engineer → AI Engineer. Moving data → building the intelligence on top of it.**
+> **Data Engineer → AI Engineer. From moving data to building the intelligence on top of it.**
 
 ---
 
@@ -85,4 +85,4 @@ The latency obsession, made personal. Talk to your computer with **zero cloud de
 
 ---
 
-📍 **Buffalo, NY** · open to AI/ML engineering roles · let's build something that ships.
+Open to AI/ML engineering roles · let's build something that ships.
