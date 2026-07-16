@@ -39,15 +39,12 @@ Straight from my healthcare-claims roots, now with agents. Turns a folder of raw
 
 The fintech + statistics side. A **3-way match** (invoice vs PO vs goods receipt) plus fraud detectors: exact & fuzzy duplicates, price outliers via vendor-history z-scores, bank-detail changes, threshold gaming. Detector **precision/recall are measured on a labeled synthetic population and gated at 90% in CI** — detector quality treated as a regression-tested property, not a hope.
 
-### 🎙️ [Voxa](https://github.com/TarunReddy8/voxa) — a fully local, low-latency voice AI agent
-[![CI](https://github.com/TarunReddy8/voxa/actions/workflows/ci.yml/badge.svg)](https://github.com/TarunReddy8/voxa/actions/workflows/ci.yml)
+### 🪄 [Aria](https://github.com/TarunReddy8/aria) — a personal AI assistant (notifications · email · voice)
+[![CI](https://github.com/TarunReddy8/aria/actions/workflows/ci.yml/badge.svg)](https://github.com/TarunReddy8/aria/actions/workflows/ci.yml)
 
-The latency obsession, made personal. Talk to your computer with **zero cloud dependencies**: energy-based VAD, faster-whisper STT, streaming Ollama reasoning with native tool calls, and a **sentence-streamed Piper TTS pipeline that starts speaking while the model is still generating**. Per-turn latency breakdown built in, AST-safe tool execution, and an agent loop fully testable in CI without any hardware.
+Everything I learned, in one app you actually use. A **unified inbox** for email and notifications, **triaged by an LLM** (classify · prioritize · summarize) with a deterministic, negation-aware offline fallback, and a **chat *and* voice assistant** with safe read/organize tools over it — it drafts and summarizes but never sends on its own. Browser-native text-to-speech (it *speaks* its replies), optional local speech-to-text. Shipped as one **Streamlit app, free to host — no server to run.** Fully tested offline (no model, no network, no mailbox).
 
-### 📡 [Relay](https://github.com/TarunReddy8/relay) — a self-hosted personal AI hub
-[![CI](https://github.com/TarunReddy8/relay/actions/workflows/ci.yml/badge.svg)](https://github.com/TarunReddy8/relay/actions/workflows/ci.yml)
-
-Everything I learned, in one system. A **unified inbox** for email and device notifications, **triaged by an LLM** (classify · prioritize · summarize) with a deterministic offline fallback, **pushed in real time over WebSocket** to a Slack-like UI that works on phone and laptop at once. A **chat *and* voice assistant** with safe read/organize tools over your inbox — it drafts and summarizes but never sends on its own. Async FastAPI, idempotent ingest, read-only email; tested fully offline (no model, no network, no mailbox).
+<sub>Aria is the fusion of two earlier experiments — a local **voice agent** and a real-time **notification hub** — into one product. Those repos ([voxa](https://github.com/TarunReddy8/voxa), [relay](https://github.com/TarunReddy8/relay)) are archived as design references.</sub>
 
 > 🚧 **Next:** *TokenGate* — a self-hosted LLM gateway with semantic caching, complexity-based model routing, and per-team cost budgets. Build → evaluate → **operate cheaply.**
 
