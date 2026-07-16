@@ -44,6 +44,11 @@ The fintech + statistics side. A **3-way match** (invoice vs PO vs goods receipt
 
 The latency obsession, made personal. Talk to your computer with **zero cloud dependencies**: energy-based VAD, faster-whisper STT, streaming Ollama reasoning with native tool calls, and a **sentence-streamed Piper TTS pipeline that starts speaking while the model is still generating**. Per-turn latency breakdown built in, AST-safe tool execution, and an agent loop fully testable in CI without any hardware.
 
+### 📡 [Relay](https://github.com/TarunReddy8/relay) — a self-hosted personal AI hub
+[![CI](https://github.com/TarunReddy8/relay/actions/workflows/ci.yml/badge.svg)](https://github.com/TarunReddy8/relay/actions/workflows/ci.yml)
+
+Everything I learned, in one system. A **unified inbox** for email and device notifications, **triaged by an LLM** (classify · prioritize · summarize) with a deterministic offline fallback, **pushed in real time over WebSocket** to a Slack-like UI that works on phone and laptop at once. A **chat *and* voice assistant** with safe read/organize tools over your inbox — it drafts and summarizes but never sends on its own. Async FastAPI, idempotent ingest, read-only email; tested fully offline (no model, no network, no mailbox).
+
 > 🚧 **Next:** *TokenGate* — a self-hosted LLM gateway with semantic caching, complexity-based model routing, and per-team cost budgets. Build → evaluate → **operate cheaply.**
 
 ---
