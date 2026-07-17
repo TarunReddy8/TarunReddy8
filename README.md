@@ -20,7 +20,7 @@ The through-line from Optum to Ally is the same instinct: **the unglamorous part
 
 ---
 
-## The work: four systems, one philosophy — *build → evaluate → ship*
+## The work: three systems, one philosophy — *build → evaluate → ship*
 
 I ship my thinking in the open. Each project solves a real business problem **and** proves a different discipline. They even reference each other.
 
@@ -38,13 +38,6 @@ Straight from my healthcare-claims roots, now with agents. Turns a folder of raw
 [![CI](https://github.com/TarunReddy8/apsentry/actions/workflows/ci.yml/badge.svg)](https://github.com/TarunReddy8/apsentry/actions/workflows/ci.yml)
 
 The fintech + statistics side. A **3-way match** (invoice vs PO vs goods receipt) plus fraud detectors: exact & fuzzy duplicates, price outliers via vendor-history z-scores, bank-detail changes, threshold gaming. Detector **precision/recall are measured on a labeled synthetic population and gated at 90% in CI** — detector quality treated as a regression-tested property, not a hope.
-
-### 🪄 [Aria](https://github.com/TarunReddy8/aria) — a personal AI assistant (notifications · email · voice)
-[![CI](https://github.com/TarunReddy8/aria/actions/workflows/ci.yml/badge.svg)](https://github.com/TarunReddy8/aria/actions/workflows/ci.yml)
-
-Everything I learned, in one app you actually use. A **unified inbox** for email and notifications, **triaged by an LLM** (classify · prioritize · summarize) with a deterministic, negation-aware offline fallback, and a **chat *and* voice assistant** with safe read/organize tools over it — it drafts and summarizes but never sends on its own. Browser-native text-to-speech (it *speaks* its replies), optional local speech-to-text. Shipped as one **Streamlit app, free to host — no server to run.** Fully tested offline (no model, no network, no mailbox).
-
-<sub>Aria is the fusion of two earlier experiments — a local **voice agent** and a real-time **notification hub** — into one product. Those repos ([voxa](https://github.com/TarunReddy8/voxa), [relay](https://github.com/TarunReddy8/relay)) are archived as design references.</sub>
 
 > 🚧 **Next:** *TokenGate* — a self-hosted LLM gateway with semantic caching, complexity-based model routing, and per-team cost budgets. Build → evaluate → **operate cheaply.**
 
