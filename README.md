@@ -20,7 +20,7 @@ The through-line from Optum to Ally is the same instinct: **the unglamorous part
 
 ---
 
-## The work: three systems, one philosophy — *build → evaluate → ship*
+## The work: four systems, one philosophy — *build → evaluate → ship*
 
 I ship my thinking in the open. Each project solves a real business problem **and** proves a different discipline. They even reference each other.
 
@@ -38,6 +38,11 @@ Straight from my healthcare-claims roots, now with agents. Turns a folder of raw
 [![CI](https://github.com/TarunReddy8/apsentry/actions/workflows/ci.yml/badge.svg)](https://github.com/TarunReddy8/apsentry/actions/workflows/ci.yml)
 
 The fintech + statistics side. A **3-way match** (invoice vs PO vs goods receipt) plus fraud detectors: exact & fuzzy duplicates, price outliers via vendor-history z-scores, bank-detail changes, threshold gaming. Detector **precision/recall are measured on a labeled synthetic population and gated at 90% in CI** — detector quality treated as a regression-tested property, not a hope.
+
+### 📄 [DocAI](https://github.com/TarunReddy8/Doc-AI-Flow) — AI document intelligence platform
+[![CI/CD](https://github.com/TarunReddy8/Doc-AI-Flow/actions/workflows/ci.yml/badge.svg)](https://github.com/TarunReddy8/Doc-AI-Flow/actions/workflows/ci.yml)
+
+The full-stack MLOps piece. Turns scanned invoices and contracts into **structured JSON**: OCR (DocTR → Tesseract fallback) → **versioned-prompt LLM extraction** (OpenAI / Anthropic / Gemini / Groq, or a no-key mock mode) → **ChromaDB** semantic search. Real MLOps — **MLflow** experiment tracking, **drift detection**, and **prompt A/B testing** — with Prometheus monitoring, a Streamlit dashboard, Docker Compose, and 22 tests in CI.
 
 > 🚧 **Next:** *TokenGate* — a self-hosted LLM gateway with semantic caching, complexity-based model routing, and per-team cost budgets. Build → evaluate → **operate cheaply.**
 
