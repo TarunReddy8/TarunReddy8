@@ -40,7 +40,6 @@ Straight from my healthcare-claims roots, now with agents. Turns a folder of raw
 The fintech + statistics side. A **3-way match** (invoice vs PO vs goods receipt) plus fraud detectors: exact & fuzzy duplicates, price outliers via vendor-history z-scores, bank-detail changes, threshold gaming. Detector **precision/recall are measured on a labeled synthetic population and gated at 90% in CI** — detector quality treated as a regression-tested property, not a hope.
 
 ### 🪄 [Aria](https://github.com/TarunReddy8/aria) — a personal AI assistant (notifications · email · voice)
-[![Live demo](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://tarunreddy8-aria.streamlit.app)
 [![CI](https://github.com/TarunReddy8/aria/actions/workflows/ci.yml/badge.svg)](https://github.com/TarunReddy8/aria/actions/workflows/ci.yml)
 
 Everything I learned, in one app you actually use. A **unified inbox** for email and notifications, **triaged by an LLM** (classify · prioritize · summarize) with a deterministic, negation-aware offline fallback, and a **chat *and* voice assistant** with safe read/organize tools over it — it drafts and summarizes but never sends on its own. Browser-native text-to-speech (it *speaks* its replies), optional local speech-to-text. Shipped as one **Streamlit app, free to host — no server to run.** Fully tested offline (no model, no network, no mailbox).
