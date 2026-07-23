@@ -20,7 +20,7 @@ The through-line from Optum to Ally is the same instinct: **the unglamorous part
 
 ---
 
-## The work: four systems, one philosophy — *build → evaluate → ship*
+## The work: five systems, one philosophy — *build → evaluate → ship*
 
 I ship my thinking in the open. Each project solves a real business problem **and** proves a different discipline. They even reference each other.
 
@@ -43,6 +43,11 @@ The fintech + statistics side. A **3-way match** (invoice vs PO vs goods receipt
 [![CI/CD](https://github.com/TarunReddy8/Doc-AI-Flow/actions/workflows/ci.yml/badge.svg)](https://github.com/TarunReddy8/Doc-AI-Flow/actions/workflows/ci.yml)
 
 The full-stack MLOps piece. Turns scanned invoices and contracts into **structured JSON**: OCR (DocTR → Tesseract fallback) → **versioned-prompt LLM extraction** (OpenAI / Anthropic / Gemini / Groq, or a no-key mock mode) → **ChromaDB** semantic search. Real MLOps — **MLflow** experiment tracking, **drift detection**, and **prompt A/B testing** — with Prometheus monitoring, a Streamlit dashboard, Docker Compose, and 22 tests in CI.
+
+### 🎧 [TriageIQ](https://github.com/TarunReddy8/triageiq) — autonomous support-triage agent
+[![CI](https://github.com/TarunReddy8/triageiq/actions/workflows/ci.yml/badge.svg)](https://github.com/TarunReddy8/triageiq/actions/workflows/ci.yml)
+
+The agentic-AI piece. An agent that reads a support ticket, gathers context with **tool-calling** (KB search, order/customer lookup), and routes it to **auto-resolve / review / escalate**. The safety design is the point: side-effecting actions (refunds, account changes) are **proposed but never executed — they require human approval**; a bounded tool loop, **persistent case memory**, and **PII redaction** keep it production-shaped. A labeled-ticket **eval harness** scores category/disposition accuracy, escalation precision/recall, and safety — **gated in CI**.
 
 > 🚧 **Next:** *TokenGate* — a self-hosted LLM gateway with semantic caching, complexity-based model routing, and per-team cost budgets. Build → evaluate → **operate cheaply.**
 
