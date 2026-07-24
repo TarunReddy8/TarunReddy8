@@ -22,27 +22,27 @@ The through-line from Optum to Ally is the same instinct: **the unglamorous part
 
 ## The work: five systems, one philosophy — *build → evaluate → ship*
 
-I ship my thinking in the open. Each project solves a real business problem **and** proves a different discipline. They even reference each other.
+I ship my thinking in the open. Each project solves a real business problem **and** proves a different discipline — several run on **real public data** (SEC EDGAR, FDA openFDA, CORD receipts), all green in CI.
 
 ### 🧪 [evalsmith](https://github.com/TarunReddy8/evalsmith) — CI for LLM quality
 [![CI](https://github.com/TarunReddy8/evalsmith/actions/workflows/ci.yml/badge.svg)](https://github.com/TarunReddy8/evalsmith/actions/workflows/ci.yml)
 
 My data-engineering reflex applied to LLMs: *if you can't measure it, you can't ship it.* An evaluation framework scoring faithfulness, relevance, and safety (LLM-as-judge or offline heuristics), with **regression gates** — commit a baseline, and any prompt or model change that drops quality **fails the build**, with a per-case HTML report showing exactly which answers regressed.
 
-### 🏥 [ClaimSight](https://github.com/TarunReddy8/claimsight) — multi-agent claims processing
-[![CI](https://github.com/TarunReddy8/claimsight/actions/workflows/ci.yml/badge.svg)](https://github.com/TarunReddy8/claimsight/actions/workflows/ci.yml)
+### 📈 [edgar-iq](https://github.com/TarunReddy8/edgar-iq) — financial-filing intelligence on real SEC data
+[![CI](https://github.com/TarunReddy8/edgar-iq/actions/workflows/ci.yml/badge.svg)](https://github.com/TarunReddy8/edgar-iq/actions/workflows/ci.yml)
 
-Straight from my healthcare-claims roots, now with agents. Turns a folder of raw claim documents into an **audit-ready decision packet**: LLM extraction with *verified citations* (hallucinated quotes get caught), a deterministic 9-rule policy engine, and a hash-chained tamper-evident audit trail. LLMs only where they add value — the decision itself stays reproducible code. **Its narratives are gated by evalsmith in CI.**
+The financial side, on **real data**. Give it a ticker; it pulls the company's **real XBRL financials straight from SEC EDGAR** (free, no key), builds annual metric series with year-over-year moves, and computes **deterministic red-flag signals** (revenue decline, net loss, thin liquidity, high leverage) grounded in the actual filed numbers. The LLM writes the risk narrative but **never invents numbers** — metrics and flags are computed first, with a deterministic offline fallback, and tests assert on Apple's and Intel's real reported figures.
 
-### 💳 [APSentry](https://github.com/TarunReddy8/apsentry) — AP invoice screening with backtested detectors
-[![CI](https://github.com/TarunReddy8/apsentry/actions/workflows/ci.yml/badge.svg)](https://github.com/TarunReddy8/apsentry/actions/workflows/ci.yml)
+### 🩺 [fda-signal](https://github.com/TarunReddy8/fda-signal) — drug safety-signal detection on real FDA data
+[![CI](https://github.com/TarunReddy8/fda-signal/actions/workflows/ci.yml/badge.svg)](https://github.com/TarunReddy8/fda-signal/actions/workflows/ci.yml)
 
-The fintech + statistics side. A **3-way match** (invoice vs PO vs goods receipt) plus fraud detectors: exact & fuzzy duplicates, price outliers via vendor-history z-scores, bank-detail changes, threshold gaming. Detector **precision/recall are measured on a labeled synthetic population and gated at 90% in CI** — detector quality treated as a regression-tested property, not a hope.
+The healthcare + statistics side, on **real data**. Runs the same **disproportionality analysis (PRR / ROR / chi-square)** regulators use for pharmacovigilance, over **real FDA adverse-event reports (openFDA / FAERS)**. From raw report counts alone it rediscovers known risks — e.g. metformin → **lactic acidosis, PRR 80.9** — using standard MHRA signalling thresholds. Statistics are computed before any LLM call; it runs fully offline against committed real fixtures, honestly flags that signals mean disproportional *reporting* not causation, and is **not medical advice**.
 
 ### 📄 [DocAI](https://github.com/TarunReddy8/Doc-AI-Flow) — AI document intelligence platform
 [![CI/CD](https://github.com/TarunReddy8/Doc-AI-Flow/actions/workflows/ci.yml/badge.svg)](https://github.com/TarunReddy8/Doc-AI-Flow/actions/workflows/ci.yml)
 
-The full-stack MLOps piece. Turns scanned invoices and contracts into **structured JSON**: OCR (DocTR → Tesseract fallback) → **versioned-prompt LLM extraction** (OpenAI / Anthropic / Gemini / Groq, or a no-key mock mode) → **ChromaDB** semantic search. Real MLOps — **MLflow** experiment tracking, **drift detection**, and **prompt A/B testing** — with Prometheus monitoring, a Streamlit dashboard, Docker Compose, and 22 tests in CI.
+The full-stack MLOps piece. Turns scanned receipts and documents into **structured JSON**: OCR (DocTR → Tesseract fallback) → **versioned-prompt LLM extraction** (OpenAI / Anthropic / Gemini / Groq, or a no-key mock mode) → **ChromaDB** semantic search. Real MLOps — **MLflow** experiment tracking, **drift detection**, and **prompt A/B testing** — with Prometheus monitoring, a Streamlit dashboard, Docker Compose, and extraction accuracy measured on **real CORD receipts**, 28 tests in CI.
 
 ### 🎧 [TriageIQ](https://github.com/TarunReddy8/triageiq) — autonomous support-triage agent
 [![CI](https://github.com/TarunReddy8/triageiq/actions/workflows/ci.yml/badge.svg)](https://github.com/TarunReddy8/triageiq/actions/workflows/ci.yml)
