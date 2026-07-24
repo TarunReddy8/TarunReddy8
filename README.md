@@ -8,7 +8,7 @@
 
 ## My story: production AI across two regulated industries
 
-I started as an **AI/ML Engineer at Optum (UnitedHealth Group)**, building machine-learning and NLP systems over **medical & pharmacy claims**: gradient-boosted risk-stratification and cost models scoring **8M+ members at AUC 0.86**, NLP pipelines for auto-coding and prior-authorization triage under **HIPAA-grade PHI controls**, and claims fraud/anomaly detection that flagged **~$14M in improper payments** — all productionized on Databricks with automated retraining and drift monitoring. I learned what "production" actually costs in a regulated world: PHI controls, data-quality gates, model monitoring, the pager at 3 AM.
+I started as an **AI/ML Engineer at Optum (UnitedHealth Group)**, building ML and clinical-NLP systems over **medical & pharmacy claims** at population scale: a risk-stratification and **30-day-readmission** platform scoring **8M+ members at AUC 0.86** that helped cut avoidable admissions ~12% and save **~$30M** in annual medical cost; a **ClinicalBERT** pipeline surfacing undocumented **HCC codes** that recovered **~$18M** in appropriate reimbursement; and fraud/waste/abuse detection flagging **~$14M** in improper payments — all shipped on Databricks with an MLOps platform (MLflow, drift monitoring) and a **model fairness / bias-audit gate aligned to the NIST AI Risk Management Framework**. I learned what "production" actually costs in a regulated, PHI-bound world: monitoring, governance, and the pager at 3 AM.
 
 Then I earned an **MS in Data Science** to go deeper on ML, LLMs, and the data systems underneath them.
 
