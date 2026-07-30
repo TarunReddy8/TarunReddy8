@@ -20,7 +20,7 @@ The through-line from Optum to Ally is the same instinct: **the model is the eas
 
 ---
 
-## The work: six systems, one philosophy — *build → evaluate → ship*
+## The work: seven systems, one philosophy — *build → evaluate → ship*
 
 I ship my thinking in the open. Each project solves a real business problem **and** proves a different discipline — most run on **real public data** (CMS Medicare, SEC EDGAR, FDA openFDA, CORD receipts), all green in CI.
 
@@ -32,6 +32,13 @@ The one I'd demo first. It analyzes **8,257,183 real CMS Medicare Part D records
 On top sits a **tool-calling agent with a closed allowlist** — the model picks a tool *name* and never writes SQL, statistics run *before* any LLM, and every answer ships its evidence and audit trail. There's a **Streamlit chat UI**, a FastAPI service, and a CLI; the whole thing runs offline with no API key. Full-population scan in **~3 seconds** via DuckDB over Parquet.
 
 Its best feature is what it refuses to overclaim: CMS publishes the molecule but not dosage form, so that $1.86B is framed as an **upper bound and a pharmacist review queue** — not a booked saving.
+
+### 🗃️ [nlsql](https://github.com/TarunReddy8/nlsql) — talk to a SQL database in plain English
+[![CI](https://github.com/TarunReddy8/nlsql/actions/workflows/ci.yml/badge.svg)](https://github.com/TarunReddy8/nlsql/actions/workflows/ci.yml)
+
+Anyone can prompt an LLM for SQL; the engineering is **is it safe to run, and is it right?** nlsql answers both. A **safety layer never trusts generated SQL** — single statement, SELECT-only, every table validated against the live introspected schema, LIMIT injected — and keyword screening runs with string literals blanked, so `WHERE Name = 'delete me'` is data, not a DROP. The database is opened read-only at the driver too, so the guard is defence in depth.
+
+Correctness is **measured, not asserted**: execution accuracy against gold SQL, comparing result sets as multisets (order only matters when the gold query orders), **gated at 90% in CI**. It also ships a **held-out benchmark the offline templates score 0% on** — deliberately, so the headline number can't be misread as general text-to-SQL ability. Works on any SQLite database, with a CLI and a Streamlit UI.
 
 ### 🧪 [evalsmith](https://github.com/TarunReddy8/evalsmith) — CI for LLM quality
 [![CI](https://github.com/TarunReddy8/evalsmith/actions/workflows/ci.yml/badge.svg)](https://github.com/TarunReddy8/evalsmith/actions/workflows/ci.yml)
