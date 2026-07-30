@@ -20,9 +20,18 @@ The through-line from Optum to Ally is the same instinct: **the model is the eas
 
 ---
 
-## The work: five systems, one philosophy — *build → evaluate → ship*
+## The work: six systems, one philosophy — *build → evaluate → ship*
 
-I ship my thinking in the open. Each project solves a real business problem **and** proves a different discipline — several run on **real public data** (SEC EDGAR, FDA openFDA, CORD receipts), all green in CI.
+I ship my thinking in the open. Each project solves a real business problem **and** proves a different discipline — most run on **real public data** (CMS Medicare, SEC EDGAR, FDA openFDA, CORD receipts), all green in CI.
+
+### 💊 [rxlens](https://github.com/TarunReddy8/rxlens) — healthcare AI agent over 8.3M real Medicare records
+[![CI](https://github.com/TarunReddy8/rxlens/actions/workflows/ci.yml/badge.svg)](https://github.com/TarunReddy8/rxlens/actions/workflows/ci.yml)
+
+The one I'd demo first. It analyzes **8,257,183 real CMS Medicare Part D records** (346K prescribers, $72B in drug spend) and answers the three questions every payer asks: *where is money leaking, who looks anomalous, and what needs a human?* It identifies a **$1.86B generic-substitution opportunity**, and finds cost outliers with a **robust median/MAD z-score** — deliberately chosen because mean and standard deviation get dragged around by the very outliers you're hunting. Real find: IVIG at **$40,251 per fill against an $11,206 peer median**.
+
+On top sits a **tool-calling agent with a closed allowlist** — the model picks a tool *name* and never writes SQL, statistics run *before* any LLM, and every answer ships its evidence and audit trail. There's a **Streamlit chat UI**, a FastAPI service, and a CLI; the whole thing runs offline with no API key. Full-population scan in **~3 seconds** via DuckDB over Parquet.
+
+Its best feature is what it refuses to overclaim: CMS publishes the molecule but not dosage form, so that $1.86B is framed as an **upper bound and a pharmacist review queue** — not a booked saving.
 
 ### 🧪 [evalsmith](https://github.com/TarunReddy8/evalsmith) — CI for LLM quality
 [![CI](https://github.com/TarunReddy8/evalsmith/actions/workflows/ci.yml/badge.svg)](https://github.com/TarunReddy8/evalsmith/actions/workflows/ci.yml)
