@@ -33,12 +33,12 @@ On top sits a **tool-calling agent with a closed allowlist** — the model picks
 
 Its best feature is what it refuses to overclaim: CMS publishes the molecule but not dosage form, so that $1.86B is framed as an **upper bound and a pharmacist review queue** — not a booked saving.
 
-### 🗃️ [nlsql](https://github.com/TarunReddy8/nlsql) — talk to a SQL database in plain English
-[![CI](https://github.com/TarunReddy8/nlsql/actions/workflows/ci.yml/badge.svg)](https://github.com/TarunReddy8/nlsql/actions/workflows/ci.yml)
+### 🗃️ [analytics-agent](https://github.com/TarunReddy8/analytics-agent) — conversational analytics over SQL
+[![CI](https://github.com/TarunReddy8/analytics-agent/actions/workflows/ci.yml/badge.svg)](https://github.com/TarunReddy8/analytics-agent/actions/workflows/ci.yml)
 
-Anyone can prompt an LLM for SQL; the engineering is **is it safe to run, and is it right?** nlsql answers both. A **safety layer never trusts generated SQL** — single statement, SELECT-only, every table validated against the live introspected schema, LIMIT injected — and keyword screening runs with string literals blanked, so `WHERE Name = 'delete me'` is data, not a DROP. The database is opened read-only at the driver too, so the guard is defence in depth.
+Ask a real database in plain English. Generation is **grounded in RAG over table schemas, column glossaries, and curated query examples** (pgvector, or an in-process store so nothing needs infrastructure) — because pasting a whole schema into the prompt stops working the moment a database has hundreds of tables. A **safety layer never trusts generated SQL**: single statement, SELECT-only, every table validated against the live schema, LIMIT injected, and keyword screening with string literals blanked so `WHERE Name = 'delete me'` is data, not a DROP. Execution errors hit a **repair loop** that fixes near-miss identifiers and retries.
 
-Correctness is **measured, not asserted**: execution accuracy against gold SQL, comparing result sets as multisets (order only matters when the gold query orders), **gated at 90% in CI**. It also ships a **held-out benchmark the offline templates score 0% on** — deliberately, so the headline number can't be misread as general text-to-SQL ability. Works on any SQLite database, with a CLI and a Streamlit UI.
+Quality is measured on **two** axes because they fail independently: **execution accuracy** (compare result sets, not query text) and **retrieval hit rate** (did we even surface the tables the gold query needs). That split earns its keep — the held-out set scores **0% execution with 95% retrieval**, which says the retriever is fine and the generator is the limit. Tuning chunk composition surfaced a trap worth the whole exercise: adding worked examples *hurt* retrieval (97.5% → 88.4%) because those chunks consumed top-k slots while carrying no table attribution; fixing that and giving each chunk kind its own budget recovered it. Streamlit UI, FastAPI backend, and a feedback loop that promotes thumbs-down + corrected SQL straight into the benchmark.
 
 ### 🧪 [evalsmith](https://github.com/TarunReddy8/evalsmith) — CI for LLM quality
 [![CI](https://github.com/TarunReddy8/evalsmith/actions/workflows/ci.yml/badge.svg)](https://github.com/TarunReddy8/evalsmith/actions/workflows/ci.yml)
